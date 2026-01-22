@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Ürün Lokasyon Bul</title>
+<style>
+body { font-family: Arial; background:#f4f4f4; padding:40px; }
+.container { background:#fff; padding:20px; border-radius:8px; max-width:400px; }
+input, button { width:100%; padding:10px; margin-top:10px; }
+button { background:#007bff; color:white; border:none; }
+</style>
+</head>
+<body>
+<div class="container">
+<h2>Ürün Lokasyon Bul</h2>
+<input id="kod" placeholder="Malzeme kodu gir">
+<button onclick="ara()">Ara</button>
+<div id="sonuc"></div>
+</div>
+
+<script>
+const urunler = [
+  { kod:"1001", ad:"Sweatshirt", lokasyon:"Raf 3 - Masa 2" },
+  { kod:"1002", ad:"Tişört", lokasyon:"Raf 1 - Masa 4" }
+];
+
+function ara(){
+  const k=document.getElementById("kod").value;
+  const u=urunler.find(x=>x.kod===k);
+  document.getElementById("sonuc").innerHTML =
+    u ? `Ürün: ${u.ad}<br>Lokasyon: ${u.lokasyon}` : "Ürün bulunamadı";
+}
+</script>
+</body>
+</html>
