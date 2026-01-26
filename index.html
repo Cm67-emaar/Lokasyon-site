@@ -13,8 +13,8 @@ button { background:#007bff; color:white; border:none; }
 <body>
 <div class="container">
 <h2>Ürün Lokasyon Bul</h2>
-<input id="kod" placeholder="Malzeme kodu gir">
-<button onclick="ara()">Ara</button>
+<input id="kod"> placeholder="Malzeme kodu gir">
+<button type="button" onclick="ara()">Ara</button>
 <div id="sonuc"></div>
 </div>
 
@@ -27,9 +27,11 @@ const urunler = [
 
 function ara(){
   const k=document.getElementById("kod").value;
-  const u=urunler.find(x=>x.kod===k);
+  const u=urunler.find(function(x){ return x.kod == k;
+  });                                 
   document.getElementById("sonuc").innerHTML =
-  u ? `Ürün: ${u.ad}<br>Lokasyon: ${u.lokasyon}` : "Ürün bulunamadı";
+  u ? `Ürün: ${u.ad}<br>Lokasyon: + u.lokasyon } else { 
+   document.getElementById("sonuc").innerHTML = "Ürün bulunamadı" ; }  
 </script>
 </body>
 </html>
