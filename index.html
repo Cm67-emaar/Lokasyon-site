@@ -21,17 +21,23 @@ button { background:#007bff; color:white; border:none; }
 <script>
 const urunler = [
   { kod:"1001", ad:"Sweatshirt", lokasyon:"Raf 3 - Masa 2" },
-  { kod:"1002", ad:"Tişört", lokasyon:"Raf 1 - Masa 4" }
-  { kod:"1003", ad:"y*v*ak cınar", lokasyon:"Raf 1 - Masa 4" }
+  { kod:"1002", ad:"Tisört", lokasyon:"Raf 1 - Masa 4" },
+  { kod:"1003", ad:"Yırtık Çınar", lokasyon:"Raf 1 - Masa 4" }
 ];
 
 function ara(){
-  const k=document.getElementById("kod").value;
-  const u=urunler.find(function(x){ return x.kod == k;
-  });                                 
-  document.getElementById("sonuc").innerHTML =
-  u ? `Ürün: ${u.ad}<br>Lokasyon: + u.lokasyon } else { 
-   document.getElementById("sonuc").innerHTML = "Ürün bulunamadı" ; }  
+  var k = document.getElementById("kod").value;
+  var u = urunler.find(function(x){
+    return x.kod == k;
+  });
+
+  if (u) {
+    document.getElementById("sonuc").innerHTML =
+      "Ürün: " + u.ad + "<br>Lokasyon: " + u.lokasyon;
+  } else {
+    document.getElementById("sonuc").innerHTML = "Ürün bulunamadı";
+  }
+}
 </script>
 </body>
 </html>
