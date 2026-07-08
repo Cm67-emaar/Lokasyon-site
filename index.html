@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lokasyon Sistemi</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+
+            <h1>📦 Lokasyon Sistemi</h1>
+
+            <p>Boyner Emaar - Ürün Lokasyon Takip</p>
+
+        </div>
+
+        <div class="stats">
+
+            <div class="card">
+                <h2 id="toplamUrun">0</h2>
+                <span>Toplam Ürün</span>
+            </div>
+
+            <div class="card">
+                <h2 id="toplamReyon">0</h2>
+                <span>Reyon</span>
+            </div>
+
+            <div class="card">
+                <h2 id="toplamDepo">0</h2>
+                <span>Depo</span>
+            </div>
+
+        </div>
+
+        <div class="searchBox">
+
+            <input
+                id="aramaKutusu"
+                type="text"
+                placeholder="Malzeme • Barkod • Ürün Adı">
+
+           <div class="buttonGroup">
+
+    <button id="araButon">
+        🔍 Ara
+    </button>
+
+    <button id="kameraButon">
+        📷 Tara
+    </button>
+
+</div>
+
+        </div>
+
+        <div id="oneriler" class="oneriler"></div>
+
+        <div id="sonuc"></div>
+
+    </div>
+
+ <!-- Önce veri -->
+<script src="data/urunler.js"></script>
+
+<!-- Sonra uygulama -->
+<script src="app.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+
+<script src="camera.js"></script>
+
+</body>
+</html>
+
+
